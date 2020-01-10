@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <nav>
+        <a href="@Url.Action("Index", "Home")"><img src="~/Content/Home.png" alt="Home" /></a>
+        <a href="/Home/Cart"><img src="~/Content/Shopping-cart.png" alt="Cart" /><span class="spanSettings">@ViewBag.TotalQuantity</span></a>
+        @Html.Partial("_LoginPartial")
+    </nav>
+</header>
+<table class="tableSettings">
+    <caption>PRODUCTS</caption>
+    <thead>
+        <tr>
+            <td>NAME</td>
+            <td>PRODUCER</td>
+            <td>PRICE</td>
+            <td>BUY</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var powerbank in ViewBag.Powerbanks)
+            {
+                <tr>
+                    <td>@powerbank.Name</td>
+                    <td>@powerbank.Producer</td>
+                    <td>UAH @powerbank.Price</td>
+                    <td><a href="/Home/AddToOder/@powerbank.Id"><img src="~/Content/Cart-plus.png" alt="Add" /></a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

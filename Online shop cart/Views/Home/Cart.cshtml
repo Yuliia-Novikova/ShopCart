@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <div class="divSettings">
+        <a href="@Url.Action("Index", "Home")"><img src="~/Content/Home.png" alt="Home" /></a>
+        @Html.Partial("_LoginPartial")
+    </div>
+</header>
+<table class="tableSettings">
+    <caption>CART</caption>
+    @{
+        if (@ViewBag.Purchases.Count != 0)
+        {
+            <thead>
+                <tr>
+                    <td>NAME</td>
+                    <td>PRICE</td>
+                    <td>QUANTITY</td>
+                    <td>TOTAL</td>
+                    <td>REMOVE</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var purchase in ViewBag.Purchases)
+                {
+                    <tr>
+                        <td>@purchase.Powerbank.Name</td>
+                        <td>UAH @purchase.Powerbank.Price</td>
+                        <td>@purchase.Quantity</td>
+                        <td>UAH @purchase.Amount</td>
+                        <td><a href="/Home/RemoveFromOder/@purchase.Powerbank.Id"><img src="~/Content/Remove.png" alt="Remove" /></a></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td id="oderNow" colspan="4">Merchandise <span class="spanSettings">UAH @ViewData["TotalAmount"]</span> - Discount UAH @ViewData["Discount"] = Total : <span>UAH @ViewData["TotalAmountWithDiscount"]</span></td>
+                    <td><a href="/Home/Buy"><img id="oderImg" src="~/Content/OrderNow.png" alt="Order now!" /></a></td>
+                </tr>
+            </tfoot>
+        }
+        else
+        {
+            <tr>
+                <td id="emptyCart">Cart is empty!</td>
+            </tr>
+        }
+    }
+</table>
+
+

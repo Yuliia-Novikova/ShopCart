@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ string patternEmail = @"[^'@]+@[^@]+\.[a-zA-Z]{2,6}"; }
+
+<header>
+    <div class="divSettings">
+        <a href="@Url.Action("Index", "Home")"><img src="~/Content/Home.png" alt="Home" /></a>
+        <a href="/Home/Cart"><img src="~/Content/Shopping-cart.png" alt="Cart" /></a>
+        @Html.Partial("_LoginPartial")
+    </div>
+</header>
+<form method="post" action="">
+    <table class="tableSettings">
+        <caption>Delivery information</caption>
+        <tr>
+            <td>Phone number</td>
+            <td><input type="tel" required name="PhoneNumber" pattern="(\+?\d[- .]*){7,13}"  placeholder="0981234567"/></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" required name="Email" pattern=@patternEmail placeholder="email@com" /></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" required name="Address" placeholder="Odessa, Some str.,17"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><hr /></td>
+        </tr>
+        <tr>
+            <td id="buttonPosition" colspan="2">
+                <input class="buttonSet" type="submit" value="Checkout" />
+                <input class="buttonSet" type="reset" value="Reset" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+

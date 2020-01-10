@@ -1,0 +1,166 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html, heaser, body, div, p, a, img, ul, li, table, tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    color: #000000;
+}
+
+h1{
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.3em;
+    align-content: center;
+}
+
+header {
+    background-color: #c3c2c2;
+    padding: 10px 30px 5px 20px;
+}
+
+footer {
+    background-color: #c3c2c2;
+    text-align: right;
+    padding: 30px 30px 25px 0;
+}
+
+nav {
+    vertical-align: middle;
+}
+
+span.spanSettings {
+    padding: 3px 5px 3px 5px;
+    border-radius: 50px;
+    color: #ffffff;
+    background-color: #000000;
+    font-weight: bold;
+}
+
+div.divSettings {
+    padding-top: 10px;
+    color: #000000;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+table.tableSettings {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    text-align: center;
+    font-weight: bold;
+}
+
+td {
+    padding: 5px 20px 5px 20px;
+    border-bottom: 1px solid #696868;
+    vertical-align: middle;
+    text-align: center;
+}
+
+form table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: auto;
+}
+
+    form table tr td {
+        border-width: 0;
+    }
+
+tr td:nth-child(1) {
+    text-align: left;
+}
+
+form table tr td:nth-child(odd) {
+    padding-right: 15px;
+    text-align: right;
+    width: 50%;
+}
+
+form table tr td:nth-child(even) {
+    padding-left: 10px;
+    text-align: left;
+    width: 50%;
+}
+
+input.buttonSet {
+    border-color: #191919;
+    border-radius: 4px;
+    width: 150px;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+hr {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+caption {
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 22px;
+    text-align: center;
+}
+
+td#buttonPosition {
+    text-align: center;
+}
+
+a img#oderImg {
+    width: 60px;
+    height: 60px;
+}
+
+td#oderNow {
+    text-align: center;
+}
+
+td#emptyCart {
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

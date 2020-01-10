@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <div class="divSettings">
+        <a href="@Url.Action("Index", "Home")"><img src="~/Content/Home.png" alt="Home" /></a>
+        @Html.Partial("_LoginPartial")
+    </div>
+</header>
+<p>Thank you for your oder!</p>
